@@ -31,9 +31,9 @@ class Products extends Database
             if(!preg_match("/[^A-Za-z'-'_' ']/", $name)) {
                 header('location:../views/add-product.php?error=lettersonly');
                 exit();
-            }
+            }else
 
-            
+           { 
                 $sql = "INSERT INTO products(sku,name,price) 
             VALUES (:sku,:name,:price)";
             $statement = $this->connect()->prepare($sql);
@@ -61,7 +61,7 @@ class Products extends Database
 
 
             header("location: ../views/index.php?status=success");
-            exit();
+            exit();}
 
             ob_end_flush();
 
@@ -153,7 +153,7 @@ class Products extends Database
                 exit();
             }else
 
-            if(!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            if(!preg_match("/[^A-Za-z'-'_' ']/", $name)) {
                 header('location:../views/add-product.php?error=lettersonly');
                 exit();
             }else

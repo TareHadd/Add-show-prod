@@ -1,0 +1,15 @@
+{
+    "name": "tarik/scandiweb-ecommerce",
+    "autoload": {
+        "psr-4": {
+            "app\\": "classes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tarik Hadzic",
+            "email": "78678040+TareHadd@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

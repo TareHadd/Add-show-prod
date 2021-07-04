@@ -1,0 +1,75 @@
+.button {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  display: none;
+}
+
+.products {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+main {
+  min-height: calc(100vh - 250px) !important;
+}
+
+.save-btn {
+  top: 29px;
+  right: 140px;
+}
+
+.cancel-btn {
+  top: 29px;
+  right: 210px;
+}
+
+.add-btn {
+  top: 29px;
+  right: 255px;
+}
+
+.delete-btn {
+  top: 29px;
+  right: 125px;
+}
+
+.col-prod {
+
+  min-height: 200px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+ 
+
+  .save-btn {
+    top: 29px;
+    right: 30px;
+  }
+
+  .cancel-btn {
+    top: 29px;
+    right: 100px;
+  }
+
+  .add-btn {
+    top: 29px;
+    right: 155px;
+  }
+  
+  .delete-btn {
+    top: 29px;
+    right: 25px;
+  }
+
+ 
+  
+}
+
+@media screen and (max-width: 500px) {
+  .img-main {
+    margin-top: 15%;
+  }
+}

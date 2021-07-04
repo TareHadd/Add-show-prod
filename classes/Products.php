@@ -28,7 +28,7 @@ class Products extends Database
                 exit();
             }else
 
-            if(!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            if(!preg_match("/[^A-Za-z'-'_' ']/", $name)) {
                 header('location:../views/add-product.php?error=lettersonly');
                 exit();
             }
@@ -88,7 +88,7 @@ class Products extends Database
                 exit();
             }else
 
-            if(!preg_match("/^[a-zA-Z0-9]+$/", $name)) {
+            if(!preg_match("/[^A-Za-z'-'_' ']/", $name)) {
                 header('location:../views/add-product.php?error=lettersonly');
                 exit();
             }else

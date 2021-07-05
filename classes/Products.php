@@ -15,6 +15,7 @@ class Products extends Database
             $price = $_POST['price'];
             $size = $_POST['size'];
             $details='Size:'.' '.$size.' MB'; 
+            $skucheck = $this->sku($sku);
 
            
             if (empty($sku) || empty($name) || empty($price) || empty($size) )
@@ -29,7 +30,14 @@ class Products extends Database
                 exit();
             }else
 
+            if(!$skucheck)
+            {
+                header('location:../views/add-product.php?error=sku');
+                exit();
+            }else
+
            { 
+            
             $sql = "INSERT INTO products(sku,name,price,details) 
             VALUES (:sku,:name,:price,:details)";
             $statement = $this->connect()->prepare($sql);
@@ -57,6 +65,7 @@ class Products extends Database
             $width = $_POST['width'];
             $length = $_POST['length'];
             $details ='Dimension:'.' '.$height.'x'.$width.'x'.$length;
+            $skucheck = $this->sku($sku);
 
             if (empty($sku) || empty($name) || empty($price) || empty($height) || empty($length) || empty($width) )
             {
@@ -67,6 +76,11 @@ class Products extends Database
             if (!is_numeric($price) || !is_numeric($width) || !is_numeric($length) || !is_numeric($height))
             {
                 header('location: ../views/add-product.php?error=number');
+                exit();
+            }else
+            if(!$skucheck)
+            {
+                header('location:../views/add-product.php?error=sku');
                 exit();
             }else
 
@@ -97,6 +111,7 @@ class Products extends Database
             $price = $_POST['price'];
             $weight = $_POST['weight'];
             $details = 'Weight:'.' '.$weight.' kg';
+            $skucheck = $this->sku($sku);
 
 
             if (empty($sku) || empty($name) || empty($price) || empty($weight) )
@@ -108,6 +123,11 @@ class Products extends Database
             if (!is_numeric($price) || !is_numeric($weight))
             {
                 header('location: ../views/add-product.php?error=number');
+                exit();
+            }else
+            if(!$skucheck)
+            {
+                header('location:../views/add-product.php?error=sku');
                 exit();
             }else
 
@@ -145,6 +165,23 @@ class Products extends Database
             return $results;
         }
     
+    }
+
+
+    public function sku($sku)
+    {
+        $sql = "SELECT * FROM products WHERE sku = :sku";
+        $statement = $this->connect()->prepare($sql);
+        $statement->bindValue(':sku', $sku);
+        $statement->execute();
+        $results = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        if (!empty($results))
+        {
+            return false;
+        }else
+        {
+            return true;
+        }
     }
 
 };

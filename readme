@@ -10,15 +10,12 @@ db name is productssave as products.sql
 
 
 
-
-
-
 -- phpMyAdmin SQL Dump
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2021 at 04:17 PM
+-- Generation Time: Jul 05, 2021 at 12:13 PM
 -- Server version: 8.0.25
 -- PHP Version: 7.3.26
 
@@ -39,62 +36,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `book`
---
-
-CREATE TABLE `book` (
-  `id` int NOT NULL,
-  `category_id` int NOT NULL,
-  `weight` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `dvd`
---
-
-CREATE TABLE `dvd` (
-  `id` int NOT NULL,
-  `category_id` int NOT NULL,
-  `size` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `dvd`
---
-
-INSERT INTO `dvd` (`id`, `category_id`, `size`) VALUES
-(7, 15, 2),
-(8, 16, 4),
-(9, 17, 23),
-(10, 18, 324);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `furniture`
---
-
-CREATE TABLE `furniture` (
-  `id` int NOT NULL,
-  `category_id` int NOT NULL,
-  `height` int NOT NULL,
-  `width` int NOT NULL,
-  `length` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `furniture`
---
-
-INSERT INTO `furniture` (`id`, `category_id`, `height`, `width`, `length`) VALUES
-(5, 19, 12, 12, 12),
-(6, 20, 1, 2, 3);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `products`
 --
 
@@ -102,42 +43,23 @@ CREATE TABLE `products` (
   `id` int NOT NULL,
   `sku` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `price` int NOT NULL
+  `price` int NOT NULL,
+  `details` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `sku`, `name`, `price`) VALUES
-(15, '111', 'Tarik', 120),
-(16, '111', 'Tarik', 120),
-(17, '111', 'Tarik', 213),
-(18, '111', 'Tarik', 324),
-(19, '12rt', 'Fiat', 12),
-(20, '12rrd', 'Tarik', 12);
+INSERT INTO `products` (`id`, `sku`, `name`, `price`, `details`) VALUES
+(48, '11D', 'DVD 1', 100, 'Size: 1024 MB'),
+(49, '11F', 'Sofa', 1000, 'Dimension: 50x200x300'),
+(50, '11B', 'book one', 10, 'Weight: 0.2 kg'),
+(56, '11D1', 'DVD 1', 123, 'Size: 120 MB');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `book`
---
-ALTER TABLE `book`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `dvd`
---
-ALTER TABLE `dvd`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `furniture`
---
-ALTER TABLE `furniture`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `products`
@@ -150,28 +72,10 @@ ALTER TABLE `products`
 --
 
 --
--- AUTO_INCREMENT for table `book`
---
-ALTER TABLE `book`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `dvd`
---
-ALTER TABLE `dvd`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `furniture`
---
-ALTER TABLE `furniture`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

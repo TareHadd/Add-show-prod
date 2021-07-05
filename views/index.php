@@ -51,6 +51,7 @@ $delete = new \app\Delete();
                             <h4 class="text-light mt-2 mb-1 fs-4">SKU: <?php echo $product['sku'] ?></h4>
                             <p class="text-light m-0 fs-5 fw-light">NAME: <?php echo $product['name'] ?></p>
                             <p class="text-light fs-5 fw-light">PRICE: <?php echo $product['price'] ?> $</p>
+                            <p class="text-light fs-5 fw-light"><?php echo $product['details'] ?></p>
                             <!-- <p class="text-light fs-6 fw-light">SIZE: <?php // ech $product['size'] 
                                                                             ?> MB</p> -->
                         </a>

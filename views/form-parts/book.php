@@ -3,7 +3,7 @@
 <div class="row mb-3">
     <label for="weight" class="col-sm-2 col-form-label">Weight</label>
     <div class="col-sm-10">
-        <input type="number" class="form-control" id="weight" name="weight">
+        <input type="number" class="form-control" step="0.1" id="weight" name="weight">
         <div  class="form-text">Input weight in kg.</div>
     </div>
 </div>
